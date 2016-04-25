@@ -9,10 +9,10 @@ class GFormProtected
 	{
 		// dev/live
 		global $gfpd_env;
-		$gfp_env = 'live';
+		$gfpd_env = 'live';
 
 		global $gfpd_version;
-		$gfp_version = '0.1';
+		$gfpd_version = '0.1';
 
 		global $gfpd_shortname;
 		$gfpd_shortname = 'gravity-forms-protected-downloads';

@@ -28,6 +28,8 @@ class Bootstrap
 	public function initializeWordPress()
 	{
 		$this->addLocalization();
+		new Activation\AdminDependencies;
+		new Activation\PublicDependencies;
 	}
 
 	/**

@@ -9,21 +9,21 @@ var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 
 // Style Paths
-var scss_front = 'assets/scss/frontend/*';
-var scss_back = 'assets/scss/backend/*';
-var css_front = 'assets/css/frontend/';
-var css_back = 'assets/css/backend/';
+var scss_front = 'assets/scss/public/*';
+var scss_back = 'assets/scss/admin/*';
+var css_front = 'assets/css/public/';
+var css_back = 'assets/css/admin/';
 
 // JS Paths
 var js_source_front = [
-	'assets/js/frontend/gravity-forms-protected-downloads.js'
+	'assets/js/public/gravity-forms-protected-downloads.js'
 ];
 var js_source_back = [
-	'assets/js/backend/gravity-forms-protected-downloads.js'
+	'assets/js/admin/gravity-forms-protected-downloads.js'
 ];
 
-var js_compiled_front = 'assets/js/frontend/';
-var js_compiled_back = 'assets/js/backend/';
+var js_compiled_front = 'assets/js/public/';
+var js_compiled_back = 'assets/js/admin/';
 
 /**
 * Process Front End Styles
