@@ -11,6 +11,7 @@ var uglify = require('gulp-uglify');
 // Style Paths
 var scss_front = 'assets/scss/public/*';
 var scss_back = 'assets/scss/admin/*';
+
 var css_front = 'assets/css/public/';
 var css_back = 'assets/css/admin/';
 
@@ -19,6 +20,7 @@ var js_source_front = [
 	'assets/js/public/gravity-forms-protected-downloads.js'
 ];
 var js_source_back = [
+	'assets/js/admin/FileSelector.js',
 	'assets/js/admin/gravity-forms-protected-downloads.js'
 ];
 
@@ -42,7 +44,7 @@ gulp.task('scss_front', function(){
 * Process Back End Styles
 */
 gulp.task('scss_back', function(){
-	return gulp.src(scss_front)
+	return gulp.src(scss_back)
 		.pipe(sass({sourceComments: 'map', sourceMap: 'sass', style: 'compact'}))
 		.pipe(autoprefix('last 15 version'))
 		.pipe(minifycss({keepBreaks: false}))

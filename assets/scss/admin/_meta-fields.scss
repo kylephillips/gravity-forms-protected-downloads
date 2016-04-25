@@ -1,0 +1,60 @@
+//
+// Meta Fields for Download Post Type
+// --------------------------------------------------
+#gfpd-meta-box {
+	background: transparent !important;
+	border: 0;
+	.handlediv {
+		display: none;
+	}
+	h2 {
+		padding: 0;
+	}
+	.inside {
+		background-color: #fff;
+		padding: 0 0 0 78px;
+		border: 1px solid darken(#fff, 12%);
+		position: relative;
+		min-height: 84px;
+	}
+	.icon {
+		background-color: #F1F1F1;
+		padding: 8px;
+		width: 50px;
+		position: absolute;
+		left: 0;
+		top: 0;
+	}
+	.content {
+		position: relative;
+	}
+	.remove-attachment {
+		position: absolute;
+		opacity: 0;
+		width: 30px;
+		height: 30px;
+		background-color: #000;
+		color: #fff;
+		text-decoration: none;
+		border-radius: 50%;
+		text-align: center;
+		font-size: 22px;
+		line-height: 26px;
+		right: 10px;
+		top: 10px;
+		transition: opacity 200ms ease;
+	}
+	.gfpd-file-meta.has-attachment .no-file-selected {
+		display: none;
+	}
+	.gfpd-file-meta.has-attachment:hover .remove-attachment {
+		opacity: 1;
+		transition: opacity 200ms ease;
+	}
+	button.has-attachment {
+		display: none;
+	}
+	.download-meta.no-attachment {
+		display: none;
+	}
+}

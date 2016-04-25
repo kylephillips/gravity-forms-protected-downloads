@@ -19,7 +19,8 @@ class Bootstrap
 	*/
 	private function initializePlugin()
 	{
-		new Entities\Post\RegisterPostTypes;
+		new WPData\RegisterPostTypes;
+		new WPData\PostMeta;
 	}
 
 	/**

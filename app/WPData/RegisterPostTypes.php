@@ -1,5 +1,5 @@
 <?php
-namespace GFormProtected\Entities\Post;
+namespace GFormProtected\WPData;
 
 /**
 * Register the Required Post Types
