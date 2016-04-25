@@ -19,7 +19,7 @@ class Bootstrap
 	*/
 	private function initializePlugin()
 	{
-		// new Entities\PostType\RegisterPostTypes;
+		new Entities\Post\RegisterPostTypes;
 	}
 
 	/**
