@@ -21,7 +21,7 @@ class DownloadButtonShortcode
 
 	public function __construct()
 	{
-		add_shortcode('download_button', array($this, 'renderView'));
+		add_shortcode('protected_download_button', array($this, 'renderView'));
 	}
 
 	/**
@@ -30,11 +30,13 @@ class DownloadButtonShortcode
 	private function setOptions($options)
 	{
 		$this->options = shortcode_atts(array(
-			'text' => 'Download',
-			'download' => null,
-			'class' => 'btn',
-			'modal-title' => null,
-			'modal_id' => substr(md5(microtime()),rand(0,26),5)
+			'text' => __('Download', 'gfpd'), // Button Text
+			'download' => null, // Download Post ID
+			'class' => 'btn', // Button CSS Class(es)
+			'modal-title' => null, // Modal Title Text
+			'modal_id' => substr(md5(microtime()),rand(0,26),5), // Unique ID for Modal (for multiple buttons on the same page)
+			'form-id' => null, // Gravity Forms Form ID
+			'field-id' => null // Field ID for Capturing Download Title
 		), $options);
 	}
 

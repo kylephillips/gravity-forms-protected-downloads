@@ -20,7 +20,6 @@
 	position: fixed;
 	z-index: 100;
 	width: 50%;
-	height: 80%;
 	background-color: $white;
 	left: 18%;
 	top: 50px;
@@ -40,26 +39,37 @@
 	}
 }
 
-.gfpd-modal-content-interior {
-	position: relative;
-	height: 100%;
-}
-
 .gfpd-modal-body {
-	padding: 10px;
 	label {
 		display: block;
+		font-weight: bold;
 	}
 	input[type="text"]{
 		width: 100%;
 	}
-	p {
-
+	.field {
+		float: left;
+		width: 48%;
+		clear: both;
+		&.right {
+			float: right;
+			clear: none;
+		}
+		&.full {
+			float: none;
+			width: 100%;
+		}
+	}
+	.field-row {
+		padding: 10px;
+		@include clearfix;
+	}
+	.bordered {
+		border-top: 1px solid darken($white, 8%);
 	}
 }
 
 .gfpd-modal-footer {
-	position: absolute;
 	height: 50px;
 	width: 100%;
 	bottom: 0;
@@ -67,10 +77,14 @@
 	text-align: right;
 	padding-top: 10px;
 	box-sizing: border-box;
+	.button-left {
+		float: left;
+		margin-left: 10px;
+	}
 }
 
-.gfpd-download-post-list {
-	height: 250px;
+.gfpd-modal-list {
+	height: 150px;
 	overflow: auto;
 	background-color: darken($white, 8%);
 	ul {
