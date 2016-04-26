@@ -27,5 +27,8 @@ Add gated content downloads, requiring users to complete a Gravity Form to trigg
 #### Filters
 
 - **Post Type Arguments:** `gfpd_posttype_args($args)`
+Customize the Download post type labels and arguments. See the [WordPress documentation](https://codex.wordpress.org/Function_Reference/register_post_type) for more information, or view the arguments under `app/WPData/RegisterPostTypes.php`
 - **Media Button Text:** `gfpd_media_button_text($text)`
+Customize the text in the media button above the WordPress content editor.
 - **Shortcode Builder Modal Header Text:** `gfpd_media_button_modal_text($text)`
+Customize the modal window title in the shortcode builder (accessed by clicking the media button)
