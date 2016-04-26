@@ -1,5 +1,7 @@
 # Gravity Forms Protected Downloads
 
+# This Plugin is under active development and not yet functional
+
 ## Overview
 
 Add gated content downloads, requiring users to complete a Gravity Form to trigger downloads. Displays a download button that opens a modal form required for completing the download. A "Download" post type is included with the plugin, with a file field for selecting PDFs or other gated content downloads.
