@@ -1,7 +1,7 @@
 <?php
 namespace GFormProtected\Shortcodes;
 
-// use ObjectNine\Shortcodes\DownloadModal;
+use GFormProtected\Shortcodes\DownloadButtonModal;
 
 /**
 * Display a download button that opens a form modal for lead gen
@@ -44,6 +44,7 @@ class DownloadButtonShortcode
 	{
 		$this->setOptions($options);
 		if ( !$this->options['download'] ) return;
+		if ( !$this->options['form-id'] ) return;
 		return $this->renderButton();
 	}
 
@@ -52,8 +53,8 @@ class DownloadButtonShortcode
 	*/
 	public function renderButton()
 	{
-		// $modal = new DownloadModal($this->options);
-		return '<a href="#" data-download="' . $this->options['download'] . '" class="' . $this->options['class'] . '" data-modal-toggle="download-modal-' . $this->options['modal_id'] . '">' . $this->options['text'] . '</a>';
+		$modal = new DownloadButtonModal($this->options);
+		return '<a href="#" data-download="' . $this->options['download'] . '" class="' . $this->options['class'] . '" data-gfpd-modal-toggle="download-modal-' . $this->options['modal_id'] . '">' . $this->options['text'] . '</a>';
 	}
 
 }
