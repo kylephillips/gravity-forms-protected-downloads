@@ -2,7 +2,8 @@
 	<div class="gfpd-modal-content" data-gfpd-download-modal>
 		<div class="gfpd-modal-content-interior">
 			<div class="gfpd-modal-header">
-				<h3><?php _e('Add a Protected Download', 'gfpd'); ?></h3>
+				<h3><?php echo apply_filters('gfpd_media_button_modal_text', __('Add a Protected Download', 'gfpd')); ?>
+				</h3>
 			</div>
 			<div class="gfpd-modal-body">
 				<div class="field-row">

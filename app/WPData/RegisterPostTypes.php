@@ -35,6 +35,7 @@ class RegisterPostTypes
 			'supports' => array('title'),
 			'rewrite' => array('slug' => 'download', 'with_front' => false)
 		);
-		register_post_type( 'download' , $args );
+
+		register_post_type( 'download' , apply_filters('gfpd_posttype_args', $args) );
 	}
 }

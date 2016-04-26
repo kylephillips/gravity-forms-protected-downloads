@@ -13,7 +13,8 @@ class MediaButton
 
 	public function addMediaButton()
 	{
-		echo '<a href="#" class="button gfpd-add-download-button" data-add-download-button>' . __('Add Download', 'gfpd') . '</a>';
+		$text = apply_filters('gfpd_media_button_text', __('Add Download', 'gfpd'));
+		echo '<a href="#" class="button gfpd-add-download-button" data-add-download-button>' . $text . '</a>';
 		include(\GFormProtected\Helpers::view('download-button/insert-modal'));
 	}
 }
