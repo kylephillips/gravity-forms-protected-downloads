@@ -17,7 +17,8 @@ var css_back = 'assets/css/admin/';
 
 // JS Paths
 var js_source_front = [
-	'assets/js/public/gravity-forms-protected-downloads.js'
+	'assets/js/public/FormModal.js',
+	'assets/js/public/Bootstrap.js'
 ];
 var js_source_back = [
 	'assets/js/admin/DownloadFileSelector.js',
