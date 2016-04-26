@@ -1,6 +1,6 @@
 <?php wp_nonce_field( 'my_gfpd_meta_box_nonce', 'gfpd_meta_box_nonce' ); ?>
 <div class="gfpd-hidden">
-	<input type="hidden" name="gfpd_download" id="gfpd_download" value="<?php echo $this->meta['download']; ?>">
+	<input type="hidden" name="gfpd_download" id="gfpd_download" value="<?php echo $this->meta['download']; ?>" data-gfpd-download-id>
 </div>
 
 <div class="gfpd-file-meta<?php if ( $this->meta['download'] ) echo ' has-attachment'; ?>">

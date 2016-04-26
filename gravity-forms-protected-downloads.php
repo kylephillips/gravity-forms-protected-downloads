@@ -32,6 +32,7 @@ Copyright: Kyle Phillips
 * Check Wordpress and PHP versions before instantiating plugin
 */
 register_activation_hook( __FILE__, 'gformprotected_check_versions' );
+register_activation_hook( __FILE__, 'gformprotected_check_gform' );
 
 function gformprotected_check_versions( $wp = '3.9', $php = '5.3.2' )
 {
@@ -46,6 +47,18 @@ function gformprotected_check_versions( $wp = '3.9', $php = '5.3.2' )
     }
     
     wp_die('<p>The <strong>Gravity Forms Protected Downloads</strong> plugin requires ' . $flag . '  version ' . $version . ' or greater.</p>','Plugin Activation Error',  array( 'response'=>200, 'back_link'=>TRUE ) );
+}
+
+
+function gformprotected_check_gform()
+{
+    if ( class_exists('GFAPI') ) return true;
+
+    if (function_exists('deactivate_plugins')){
+        deactivate_plugins( basename( __FILE__ ) );
+    }
+    
+    wp_die('<p>The <strong>Gravity Forms Protected Downloads</strong> plugin requires Gravity Forms to be installed.</p>','Plugin Activation Error',  array( 'response'=>200, 'back_link'=>TRUE ) );
 }
 
 if( !class_exists('Bootstrap') ) :

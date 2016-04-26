@@ -20,8 +20,9 @@ var js_source_front = [
 	'assets/js/public/gravity-forms-protected-downloads.js'
 ];
 var js_source_back = [
-	'assets/js/admin/FileSelector.js',
-	'assets/js/admin/gravity-forms-protected-downloads.js'
+	'assets/js/admin/DownloadFileSelector.js',
+	'assets/js/admin/ShortcodeModal.js',
+	'assets/js/admin/Bootstrap.js'
 ];
 
 var js_compiled_front = 'assets/js/public/';

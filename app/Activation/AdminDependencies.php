@@ -34,5 +34,14 @@ class AdminDependencies extends DependencyBase
 			array('jquery'), 
 			$this->version
 		);
+		$localized_data = array(
+			'nonce' 		=> wp_create_nonce( 'gfpd-nonce' ),
+			'ajaxurl' 		=> admin_url( 'admin-ajax.php' ),
+		);
+		wp_localize_script( 
+			$this->plugin_shortname . '-admin',
+			'gfpd_admin', 
+			$localized_data
+		);
 	}
 }

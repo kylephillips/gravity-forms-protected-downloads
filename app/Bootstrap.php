@@ -21,6 +21,9 @@ class Bootstrap
 	{
 		new WPData\RegisterPostTypes;
 		new WPData\PostMeta;
+		new WPData\MediaButton;
+		new Shortcodes\DownloadButtonShortcode;
+		new Events\RegisterAdminEvents;
 	}
 
 	/**

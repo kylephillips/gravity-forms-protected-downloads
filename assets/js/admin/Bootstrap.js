@@ -1,15 +1,16 @@
 jQuery(document).ready(function(){
-	new GFormProtected;
+	new GFPD_Bootstrap;
 });
 
-var GFormProtected = function()
+var GFPD_Bootstrap = function()
 {
 	var plugin = this;
 	var $ = jQuery;
 
 	plugin.bootstrap = function()
 	{
-		new GFormProtectedFileSelector;
+		new GFPD_DownloadFileSelector;
+		new GFPD_ShortcodeModal
 		plugin.bindEvents();
 	}
 

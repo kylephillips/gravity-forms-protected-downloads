@@ -1,0 +1,114 @@
+//
+// Modals
+// --------------------------------------------------
+.gfpd-modal-overlay {
+	display: none;
+	position: fixed;
+	z-index: 99;
+	width: 100%;
+	height: 100%;
+	background-color: rgba($black, .8);
+	top: 0;
+	left: 0;
+	&.shown {
+		display: block;
+	}
+}
+
+.gfpd-modal-content {
+	display: none;
+	position: fixed;
+	z-index: 100;
+	width: 50%;
+	height: 80%;
+	background-color: $white;
+	left: 18%;
+	top: 50px;
+	margin-left: 160px;
+	&.shown {
+		display: block;
+	}
+}
+
+.gfpd-modal-header {
+	border-bottom: 1px solid darken($white, 12%);
+	background-color: darken($white, 6%);
+	padding: 15px 5px;
+	h3 {
+		margin: 0;
+		padding: 0;
+	}
+}
+
+.gfpd-modal-content-interior {
+	position: relative;
+	height: 100%;
+}
+
+.gfpd-modal-body {
+	padding: 10px;
+	label {
+		display: block;
+	}
+	input[type="text"]{
+		width: 100%;
+	}
+	p {
+
+	}
+}
+
+.gfpd-modal-footer {
+	position: absolute;
+	height: 50px;
+	width: 100%;
+	bottom: 0;
+	background-color: darken($white, 85%);
+	text-align: right;
+	padding-top: 10px;
+	box-sizing: border-box;
+}
+
+.gfpd-download-post-list {
+	height: 250px;
+	overflow: auto;
+	background-color: darken($white, 8%);
+	ul {
+		@include unstyled;
+		li {
+			margin: 0;
+			&:nth-child(even){
+				background-color: $white;
+			}
+			a {
+				display: block;
+				border-top: 1px solid darken($white, 12%);
+				padding: 8px;
+				transition: all 200ms ease;
+				&:focus, &:active {
+					outline: none;
+					box-shadow: none;
+				}
+				&:hover {
+					background-color: darken($white, 80%);
+					color: $white;
+					transition: all 200ms ease;
+				}
+				&.selected {
+					border-color: $blue;
+					background-color: $blue;
+					color: $white;
+				}
+			}
+		}
+	} // ul
+	&.loading {
+		background: url('#{$image-path}/spinner.gif'), darken($white, 8%);
+		background-repeat: no-repeat;
+		background-position: center;
+	}
+} // .gfpd-download-post-list
+
+
+
+

@@ -1,22 +1,26 @@
 /**
-* Select and Populate File Field
+* Select a Download from the WP Media Library
+* Provides JS for File field under Download Post Type
 */
-var GFormProtectedFileSelector = function()
+var GFPD_DownloadFileSelector = function()
 {
 	var plugin = this;
 	var $ = jQuery;
 
 	plugin.selectors = {
-		'openBtn' : '[data-gfpd-open-media-library]',
-		'field' : '#gfpd_download',
-		'removeBtn' : '[data-gfpd-remove-attachment]'
+		openBtn : '[data-gfpd-open-media-library]',
+		removeBtn : '[data-gfpd-remove-attachment]',
+	}
+
+	plugin.fields = {
+		downloadId : '[data-gfpd-download-id]'
 	}
 
 	plugin.bindEvents = function()
 	{
 		$(document).on('click', plugin.selectors.openBtn, function(e){
 			e.preventDefault();
-			plugin.openWindow($(this));
+			plugin.openMediaLibrary();
 		});
 		$(document).on('click', plugin.selectors.removeBtn, function(e){
 			e.preventDefault();
@@ -25,9 +29,9 @@ var GFormProtectedFileSelector = function()
 	}
 
 	/**
-	* Open the ML Window
+	* Open the Media Library Window
 	*/
-	plugin.openWindow = function(clicked_button)
+	plugin.openMediaLibrary = function()
 	{
 		// If the object already exists, open it
 		if (wp.media.frames.gfpd_frame){
@@ -50,27 +54,26 @@ var GFormProtectedFileSelector = function()
  			plugin.populateField(selection);
 		};
  
-		// closing event for media manger
+		// Close Event for Media Library
 		wp.media.frames.gfpd_frame.on('close', set_file);
 		
-		// showing media manager
+		// Show the Media Library
 		wp.media.frames.gfpd_frame.open();
 	}
 
 	/**
-	* Populate the Field on Close
+	* Populate the File Field when the Media Library Closes
 	*/
 	plugin.populateField = function(selection)
 	{
 		selection.each(function(attachment){
-			
 			var id = attachment.id;
 			var title = attachment.attributes.title;
 			var filename = attachment.attributes.filename;
 			var filesize = attachment.attributes.filesizeHumanReadable;
 			var url = attachment.attributes.url;
 
-			$(plugin.selectors.field).val(id);
+			$(plugin.fields.downloadId).val(id);
 			$('[data-download-link]').attr('href', url);
 			$('[data-download-filename]').text(filename);
 			$('[data-download-title]').text(title);
@@ -87,7 +90,7 @@ var GFormProtectedFileSelector = function()
 	{
 		$(plugin.selectors.openBtn).removeClass('has-attachment');
 		$('.gfpd-file-meta').removeClass('has-attachment');
-		$(plugin.selectors.field).val(null);
+		$(plugin.fields.downloadId).val(null);
 		$('.download-meta').addClass('no-attachment');
 	}
 
