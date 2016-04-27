@@ -23,6 +23,7 @@ var js_source_front = [
 var js_source_back = [
 	'assets/js/admin/DownloadFileSelector.js',
 	'assets/js/admin/ShortcodeModal.js',
+	'assets/js/admin/Settings.js',
 	'assets/js/admin/Bootstrap.js'
 ];
 

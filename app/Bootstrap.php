@@ -19,9 +19,11 @@ class Bootstrap
 	*/
 	private function initializePlugin()
 	{
+		new Activation\Activation;
 		new WPData\RegisterPostTypes;
 		new WPData\PostMeta;
 		new WPData\MediaButton;
+		new Settings\Settings;
 		new Shortcodes\DownloadButtonShortcode;
 		new Events\RegisterAdminEvents;
 	}

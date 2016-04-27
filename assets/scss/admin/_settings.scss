@@ -1,0 +1,19 @@
+//
+// Plugin Settings
+// --------------------------------------------------
+.gfpd-form-settings {
+	@include unstyled;
+	.fields {
+		display: none;
+		padding: 10px;
+		background-color: darken($white, 10%);
+		margin-bottom: 20px;
+		margin-top: 8px;
+		p {
+			margin: 0 0 10px 0;
+		}
+		&.visible {
+			display: block;
+		}
+	}
+} // .gfpd-form-settings

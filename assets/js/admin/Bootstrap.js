@@ -10,13 +10,8 @@ var GFPD_Bootstrap = function()
 	plugin.bootstrap = function()
 	{
 		new GFPD_DownloadFileSelector;
-		new GFPD_ShortcodeModal
-		plugin.bindEvents();
-	}
-
-	plugin.bindEvents = function()
-	{
-		
+		new GFPD_ShortcodeModal;
+		new GFPD_Settings;
 	}
 
 	return plugin.bootstrap();
